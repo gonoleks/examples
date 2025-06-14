@@ -5,8 +5,8 @@ import (
 )
 
 func main() {
-	// Initialize a new Gonoleks app
-	app := gonoleks.New()
+	// Initialize a default Gonoleks app
+	app := gonoleks.Default()
 
 	// Define a route for the GET method on the root path '/'
 	app.GET("/", func(c *gonoleks.Context) {
