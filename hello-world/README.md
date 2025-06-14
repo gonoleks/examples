@@ -36,7 +36,7 @@ import (
 )
 
 func main() {
-	app := gonoleks.New()
+	app := gonoleks.Default()
 
 	app.GET("/", func(c *gonoleks.Context) {
 		c.String(200, "Hello, World!")
