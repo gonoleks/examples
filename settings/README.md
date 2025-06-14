@@ -44,13 +44,13 @@ func main() {
 		CaseInSensitive:               false,
 		CacheSize:                     10000,
 		DisableCaching:                false,
-		CacheMethods:                  "GET,POST,HEAD,OPTIONS",
+		CacheMethods:                  "GET,HEAD",
 		MaxCachedParams:               10,
 		MaxCachedPathLength:           100,
 		ReadBufferSize:                8192 * 2,
 		HandleMethodNotAllowed:        false,
 		HandleOPTIONS:                 false,
-		AutoRecover:                   false,
+		AutoRecover:                   true,
 		MaxRequestBodySize:            4 * 1024 * 1024,
 		MaxRouteParams:                1024,
 		MaxRequestURLLength:           2048,
@@ -102,13 +102,13 @@ Here is the full list of settings fields that can be customized:
 | **`CaseInSensitive`** | bool | Enables case-insensitive routing | `false` |
 | **`CacheSize`** | int | Maximum size of LRU cache for routing optimization | `10000` |
 | **`DisableCaching`** | bool | Disables LRU caching used to optimize routing performance | `false` |
-| **`CacheMethods`** | string | Controls which HTTP methods are cached (comma-separated list) | `"GET,POST,HEAD,OPTIONS"` |
+| **`CacheMethods`** | string | Controls which HTTP methods are cached (comma-separated list) | `"GET,HEAD"` |
 | **`MaxCachedParams`** | int | Maximum number of parameters to cache per route. Routes with more parameters than this will not be cached | `10` |
 | **`MaxCachedPathLength`** | int | Maximum length of path to cache. Paths longer than this will not be cached | `100` |
 | **`ReadBufferSize`** | int | Per-connection buffer size for request reading. This also limits the maximum header size. Increase this buffer for clients sending multi-KB RequestURIs and/or multi-KB headers (e.g., large cookies) | `8192 * 2` |
 | **`HandleMethodNotAllowed`** | bool | Enables HTTP 405 Method Not Allowed responses when a route exists but the requested method is not supported, otherwise returns 404 | `false` |
 | **`HandleOPTIONS`** | bool | Enables automatic replies to OPTIONS requests when no handlers are explicitly registered for that route | `false` |
-| **`AutoRecover`** | bool | Enables automatic recovery from panics during handler execution by responding with HTTP 500 and logging the error without stopping the service | `false` |
+| **`AutoRecover`** | bool | Enables automatic recovery from panics during handler execution by responding with HTTP 500 and logging the error without stopping the service | `true` |
 | **`MaxRequestBodySize`** | int | Maximum request body size | `4 * 1024 * 1024` |
 | **`MaxRouteParams`** | int | Maximum route parameter count | `1024` |
 | **`MaxRequestURLLength`** | int | Maximum request URL length | `2048` |
