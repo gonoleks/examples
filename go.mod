@@ -2,7 +2,7 @@ module examples
 
 go 1.23.0
 
-require github.com/gonoleks/gonoleks v1.0.0-beta.2
+require github.com/gonoleks/gonoleks v1.0.0-beta.3
 
 require (
 	github.com/andybalholm/brotli v1.1.1 // indirect
