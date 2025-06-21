@@ -32,17 +32,17 @@ Here is an example "Hello, World!" in a Gonoleks application:
 package main
 
 import (
-	"github.com/gonoleks/gonoleks"
+    "github.com/gonoleks/gonoleks"
 )
 
 func main() {
-	app := gonoleks.Default()
+    app := gonoleks.Default()
 
-	app.GET("/", func(c *gonoleks.Context) {
-		c.String(200, "Hello, World!")
-	})
+    app.GET("/", func(c *gonoleks.Context) {
+        c.String(200, "Hello, World!")
+    })
 
-	app.Run(":3000")
+    app.Run(":3000")
 }
 ```
 
