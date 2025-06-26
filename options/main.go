@@ -5,9 +5,9 @@ import (
 )
 
 func main() {
-	// Initialize custom settings
+	// Initialize custom options
 	// NOTE: The values below represent the default configuration
-	settings := &gonoleks.Settings{
+	options := &gonoleks.Options{
 		ServerName:                    "Gonoleks",
 		MaxProcs:                      0,
 		ReduceMemoryUsage:             false,
@@ -50,8 +50,8 @@ func main() {
 		LogReportResponseError:        false,
 	}
 
-	// Initialize a new Gonoleks app with the settings
-	app := gonoleks.New(settings)
+	// Initialize a new Gonoleks app with the options
+	app := gonoleks.New(options)
 
 	// Define a route for the GET method on the root path '/'
 	app.GET("/", func(c *gonoleks.Context) {
