@@ -1,13 +1,13 @@
-# Settings Example
+# Options Example
 
-This project demonstrates an application with customized settings using [Gonoleks][gonoleks_url].
+This project demonstrates an application with custom options using [Gonoleks][gonoleks_url].
 
 ## Setup
 
 1. Clone the repository:
     ```sh
     git clone https://github.com/gonoleks/examples.git
-    cd examples/settings
+    cd examples/options
     ```
 
 2. Install dependencies:
@@ -26,7 +26,7 @@ This project demonstrates an application with customized settings using [Gonolek
 
 ## Example
 
-Here is an example of customized settings in a Gonoleks application:
+Here is an example of custom options in a Gonoleks application:
 
 ```go
 package main
@@ -36,7 +36,7 @@ import (
 )
 
 func main() {
-    settings := &gonoleks.Settings{
+    options := &gonoleks.Options{
         ServerName:                    "Gonoleks",
         MaxProcs:                      0,
         ReduceMemoryUsage:             false,
@@ -79,7 +79,7 @@ func main() {
         LogReportResponseError:        false,
     }
 
-    app := gonoleks.New(settings)
+    app := gonoleks.New(options)
 
     app.GET("/", func(c *gonoleks.Context) {
         c.String(200, "Hello, World!")
@@ -89,9 +89,9 @@ func main() {
 }
 ```
 
-## Settings Fields
+## Options Fields
 
-Here is the full list of settings fields that can be customized:
+Here is the full list of options fields that can be customized:
 
 | Property | Type | Description | Default |
 |---|---|---|---|
